@@ -39,7 +39,7 @@
     require('dbconnect.php');
 
     $statement = $db->prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
-    $statement->bindParam(1, $_POST['memo']);  //上記memo=?に別で代入してる(SQLの受け渡しのセキュリティ上)
+    $statement->bindParam(1, $_POST['memo']);  //上記memo=?にセキュリティ上、別で代入(SQLの受け渡しのセキュリティ上)
     $statement->execute();
     echo 'メッセージが登録されました';
 ?>
